@@ -94,12 +94,12 @@ function getFavouriteColor(number) {
     console.log("Podałeś za dużą liczbę, liczba nie może być większa niż 30");
   } else if (parameter == null) {
     parameter = 5;
-    let sumaLiter = this.firstName.length + this.lastName.length + this.nickname.length;
-    let index = Math.abs((sumaLiter - parameter) % colors.length);
+    let sumLetters = this.firstName.length + this.lastName.length + this.nickname.length;
+    let index = Math.abs((sumLetters - parameter) % colors.length);
     console.log(colors[index]);
   } else {
-    let sumaLiter = this.firstName.length + this.lastName.length + this.nickname.length;
-    let index = Math.abs((sumaLiter - parameter) % colors.length);
+    let sumLetters = this.firstName.length + this.lastName.length + this.nickname.length;
+    let index = Math.abs((sumLetters - parameter) % colors.length);
     console.log(colors[index]);
   }
 }
@@ -140,12 +140,12 @@ function getFavouriteColorOutObject(object, number) {
     console.log("Podałeś za dużą liczbę, liczba nie może być większa niż 30");
   } else if (parameter == null) {
     parameter = 5;
-    let sumaLiter = object.firstName.length + object.lastName.length + object.nickname.length;
-    let index = Math.abs((sumaLiter - parameter) % colors.length);
+    let sumLetters = object.firstName.length + object.lastName.length + object.nickname.length;
+    let index = Math.abs((sumLetters - parameter) % colors.length);
     console.log(colors[index]);
   } else {
-    let sumaLiter = object.firstName.length + object.lastName.length + object.nickname.length;
-    let index = Math.abs((sumaLiter - parameter) % colors.length);
+    let sumLetters = object.firstName.length + object.lastName.length + object.nickname.length;
+    let index = Math.abs((sumLetters - parameter) % colors.length);
     console.log(colors[index]);
   }
 }
@@ -352,15 +352,15 @@ const nestedObject = {
 
 const names = [];
 function findNames(object) {
-  let sklejone = "";
+  let glued = "";
   for (let key in object) {
     if (typeof object[key] == "object") {
       findNames(object[key]);
     } else {
-      sklejone = sklejone + " " + object[key];
+      glued = glued + " " + object[key];
     }
   }
-  names.push(sklejone);
+  names.push(glued);
 }
 
 findNames(nestedObject);
